@@ -1,0 +1,32 @@
+﻿namespace P03_SalesDatabase.Data.Models
+{
+    using System;
+
+    public class Sale
+    {
+        public Sale()
+        {
+
+        }
+
+        public Sale(Product product, Customer customer, Store store)
+        {
+            this.Product = product;
+            this.Customer = customer;
+            this.Store = store;
+        }
+
+        public int SaleId { get; set; }
+
+        public DateTime Date { get; set; }
+
+        public int ProductId { get; set; }
+        public Product Product { get; set; }
+
+        public int CustomerId { get; set; }
+        public Customer Customer { get; set; }
+
+        public int StoreId { get; set; }
+        public Store Store { get; set; }
+    }
+}
