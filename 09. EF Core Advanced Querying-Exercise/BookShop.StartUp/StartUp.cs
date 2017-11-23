@@ -38,7 +38,6 @@
                 // Console.WriteLine(GetBooksByCategory(db, input));
 
                 // Problem 6
-                // string input = Console.ReadLine();
                 // Console.WriteLine(GetBooksReleasedBefore(db, input));
 
                 // Problem 7
@@ -64,7 +63,7 @@
                 // Console.WriteLine(GetTotalProfitByCategory(db));
 
                 // Problem 13
-                // Console.WriteLine(GetMostRecentBooks(db));
+                 Console.WriteLine(GetMostRecentBooks(db));
 
                 // Problem 14
                 // IncreasePrices(db);
@@ -172,23 +171,10 @@
             var books = db.Books
                 .Where(b => b.ReleaseDate.HasValue && b.ReleaseDate < date)
                 .OrderByDescending(b => b.ReleaseDate)
-                .Select(e => new
-                {
-                    Title = e.Title,
-                    EditionType = e.EditionType,
-                    Price = e.Price
-                })
+                .Select(b => $"{b.Title} - {b.EditionType} - ${b.Price:f2}")
                 .ToList();
 
-            var resultList = new List<string>();
-
-            foreach (var book in books)
-            {
-                var currentBookDisplay = $"{book.Title} - {book.EditionType} - ${book.Price:f2}";
-                resultList.Add(currentBookDisplay);
-            }
-            
-            return string.Join(Environment.NewLine, resultList);
+            return string.Join(Environment.NewLine, books);
         }
 
         // Pr. 07
@@ -311,21 +297,45 @@
         public static string GetMostRecentBooks(BookShopContext db)
         {
             var categories = db.Categories
-                .Include(c => c.CategoryBooks)
-                .ThenInclude(cb => cb.Book)
+                .OrderBy(c => c.Name)
+                .Select(c => new
+                {
+                    Name = c.Name,
+                    Books = c.CategoryBooks
+                                .Select(cb => cb.Book)
+                                .OrderByDescending(b => b.ReleaseDate)
+                                .Take(3)
+                                .ToList()
+                })
                 .ToList();
 
             var sb = new StringBuilder();
 
-            foreach (var cat in categories.OrderBy(c => c.Name))
+            foreach (var cat in categories)
             {
                 sb.AppendLine($"--{cat.Name}");
 
-                foreach (var catBook in cat.CategoryBooks.OrderByDescending(cb => cb.Book.ReleaseDate).Take(3))
+                foreach (var book in cat.Books)
                 {
-                    sb.AppendLine($"{catBook.Book.Title} ({catBook.Book.ReleaseDate.Value.Year})");
+                    sb.AppendLine($"{book.Title} ({(book.ReleaseDate == null ? "N/A" : book.ReleaseDate.Value.Year.ToString())})");
                 }
             }
+            //var categories = db.Categories
+            //    .Include(c => c.CategoryBooks)   // alternative solution
+            //    .ThenInclude(cb => cb.Book)
+            //    .ToList();
+
+            //var sb = new StringBuilder();
+
+            //foreach (var cat in categories.OrderBy(c => c.Name))
+            //{
+            //    sb.AppendLine($"--{cat.Name}");
+
+            //    foreach (var catBook in cat.CategoryBooks.OrderByDescending(cb => cb.Book.ReleaseDate).Take(3))
+            //    {
+            //        sb.AppendLine($"{catBook.Book.Title} ({catBook.Book.ReleaseDate.Value.Year})");
+            //    }
+            //}
 
             return sb.ToString();
         }
@@ -334,7 +344,7 @@
         public static void IncreasePrices(BookShopContext db)
         {
             var books = db.Books
-                .Where(b => b.ReleaseDate.Value.Year < 2010)
+                .Where(b => b.ReleaseDate.HasValue && b.ReleaseDate.Value.Year < 2010)
                 .ToList();
 
             foreach (var book in books)
@@ -352,12 +362,12 @@
                 .Where(b => b.Copies < 4200)
                 .ToList();
 
-            int counter = books.Count;
+            int count = books.Count;
 
             db.Books.RemoveRange(books);
             db.SaveChanges();
 
-            return counter;
+            return count;
         }
     }
 }
