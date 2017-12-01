@@ -116,7 +116,7 @@ namespace P01_ProductsShop.Data.Migrations
                 table: "Users",
                 column: "UserId");
 
-            migrationBuilder.Sql("ALTER TABLE Products " +
+            migrationBuilder.Sql("ALTER TABLE Categories " +
                                  "ADD CONSTRAINT CK_NameLen " +
                                  "CHECK (LEN(Name) >= 3 AND LEN(Name) <= 15)");
         }
