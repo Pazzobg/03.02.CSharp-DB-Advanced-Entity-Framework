@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<products>
+  <product name="Butalbital, Aspirin and Caffeine" price="1010.98" buyer="Kathy Gilbert" />
+  <product name="SEPHORA Acne-Fighting Mattifying Moisturizer" price="1019.28" buyer="Joshua Murray" />
+  <product name="Aspen" price="1046.46" buyer=" Lawson" />
+  <product name="Acetic Acid" price="1060.43" buyer=" Lawson" />
+  <product name="LBEL Couleur Luxe Rouge Amplifier XP amplifying SPF 15" price="1069.43" buyer="Sandra Riley" />
+  <product name="up and up temporary minor arthritis pain relief" price="1085.78" buyer="Billy Parker" />
+  <product name="XANTHIUM STRUMARIUM VAR CANADENSE POLLEN" price="1091.38" buyer="Carl Daniels" />
+  <product name="Head and Shoulders Conditioner" price="1099.59" buyer="Benjamin Henry" />
+  <product name="PREMIER VALUE ALLERGY" price="1127.61" buyer="Sarah Day" />
+  <product name="Lorazepam" price="1134.96" buyer=" Stewart" />
+  <product name="DIPYRIDAMOLE" price="1150.67" buyer="Betty Ward" />
+  <product name="Flumazenil" price="1151.37" buyer="Wanda Harris" />
+  <product name="Baza Antifungal" price="1162.34" buyer="Anna Parker" />
+  <product name="leader pain reliever" price="1179.79" buyer="Benjamin Henry" />
+  <product name="Benazepril Hydrochloride and Hydrochlorothiazide" price="1187.27" buyer=" Stewart" />
+  <product name="Topical 60 Sec Sodium Fluoride" price="1228.84" buyer=" Baker" />
+  <product name="Aspergillus repens" price="1231.42" buyer="Fred Allen" />
+  <product name="XtraCare Foam Antibacterial Hand Wash" price="1251.97" buyer=" Moreno" />
+  <product name="Topex" price="1258.49" buyer=" Fox" />
+  <product name="Prednisone" price="1285.99" buyer="Jennifer Riley" />
+  <product name="VITALUMIERE AQUA" price="1293.09" buyer="Patricia Fuller" />
+  <product name="Ibuprofen" price="1305.96" buyer=" Moreno" />
+  <product name="Archangelica Eucalyptus" price="1334.91" buyer="Eugene Stewart" />
+  <product name="Leg Cramp Relief" price="1345.69" buyer=" Stewart" />
+  <product name="Finasteride" price="1374.01" buyer="Kathy Gilbert" />
+  <product name="Nevirapine" price="1374.72" buyer=" Schmidt" />
+  <product name="Warfarin Sodium" price="1379.79" buyer=" Mitchell" />
+  <product name="Wintergreen Isopropyl Alcohol" price="1397.57" buyer="Sandra Riley" />
+  <product name="Metoprolol Tartrate" price="1405.74" buyer="Doris Cook" />
+  <product name="Glycopyrrolate" price="1471.43" buyer=" Fox" />
+  <product name="cough and sore throat" price="1482.68" buyer="Jonathan Rodriguez" />
+  <product name="Etoposide" price="1483.96" buyer="Paula Hill" />
+  <product name="Alcohol Free Antiseptic" price="1486.07" buyer="Ann Stevens" />
+  <product name="Budpak Hemorrhoid Anesthetic" price="1499.29" buyer="Rachel Johnson" />
+</products>

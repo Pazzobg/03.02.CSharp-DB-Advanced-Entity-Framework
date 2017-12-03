@@ -1,9 +1,8 @@
 ﻿namespace P01_ProductsShop.Data
 {
-    using System;
     using Microsoft.EntityFrameworkCore;
-    using P01_ProductsShop.Models;
     using P01_ProductsShop.Data.Configurations;
+    using P01_ProductsShop.Models;
 
     public class ProductsDbContext : DbContext
     {

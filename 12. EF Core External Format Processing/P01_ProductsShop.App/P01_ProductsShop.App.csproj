@@ -6,8 +6,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\P01_ProductsShop.Data\P01_ProductsShop.Data.csproj" />
     <ProjectReference Include="..\P01_ProductsShop.Models\P01_ProductsShop.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="CompletedTasksJSONs\" />
+    <Folder Include="CompletedTasksXMLs\" />
   </ItemGroup>
 
 </Project>

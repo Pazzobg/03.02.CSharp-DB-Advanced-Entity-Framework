@@ -23,12 +23,12 @@
                 .WithOne(pb => pb.Buyer)
                 .HasForeignKey(pb => pb.BuyerId);
 
-            //builder.Ignore(u => u.CommonFriendId);          
+            //builder.Ignore(u => u.CommonFriendId);         
 
             //builder
             //    .HasMany(u => u.Friends)
             //    .WithOne(f => f.CommonFriend)
-            //    .HasForeignKey(f => f.CommonFriendId);      
+            //    .HasForeignKey(f => f.CommonFriendId);    
         }
     }
 }
