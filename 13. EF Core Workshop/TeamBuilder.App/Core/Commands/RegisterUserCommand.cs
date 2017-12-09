@@ -13,6 +13,11 @@
         {
             Check.CheckLength(7, commandArgs);
 
+            if (AuthenticationManager.IsAuthenticated())
+            {
+                throw new InvalidOperationException(Constants.ErrorMessages.LogoutFirst);
+            }
+
             string username = commandArgs[0];
 
             if (username.Length < Constants.MinUsernameLength || username.Length > Constants.MaxUsernameLength)

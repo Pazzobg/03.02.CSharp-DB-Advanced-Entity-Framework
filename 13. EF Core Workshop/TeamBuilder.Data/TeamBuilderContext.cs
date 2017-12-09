@@ -20,6 +20,7 @@
         public DbSet<Team> Teams { get; set; }
         public DbSet<Invitation> Invitations { get; set; }
         public DbSet<UserTeam> UserTeams { get; set; }
+        public DbSet<EventTeam> EventTeams { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
@@ -36,6 +37,7 @@
             builder.ApplyConfiguration(new TeamConfiguration());
             builder.ApplyConfiguration(new UserConfiguration());
             builder.ApplyConfiguration(new UserTeamConfiguration());
+            builder.ApplyConfiguration(new InvitationConfiguration());
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿namespace TeamBuilder.App.Utilities
 {
+    using Microsoft.EntityFrameworkCore;
     using System.Linq;
     using TeamBuilder.Data;
     using TeamBuilder.Models;
@@ -52,6 +53,8 @@
             using (var context = new TeamBuilderContext())
             {
                 return context.Teams
+                    .Include(t => t.Members)
+                    .ThenInclude(m => m.User)
                     .Single(t => t.Name == teamName)
                     .Members.Any(m => m.User.Username == username);
             }

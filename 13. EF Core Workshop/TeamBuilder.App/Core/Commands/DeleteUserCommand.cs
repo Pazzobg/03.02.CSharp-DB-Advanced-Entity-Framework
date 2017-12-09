@@ -13,6 +13,7 @@
             AuthenticationManager.Authorize();
 
             var user = AuthenticationManager.GetCurrentUser();
+            var username = user.Username;
 
             using (var context = new TeamBuilderContext())
             {
@@ -22,7 +23,7 @@
 
             AuthenticationManager.Logout();
 
-            return $"User {user.Username} was deleted successfully!"; 
+            return $"User {username} was deleted successfully!"; 
         }
     }
 }

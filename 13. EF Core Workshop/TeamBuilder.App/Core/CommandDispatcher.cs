@@ -32,6 +32,18 @@
                     break;
                 case "acceptinvite": result = new AcceptInviteCommand().Execute(commandArgs);
                     break;
+                case "declineinvite": result = new DeclineInviteCommand().Execute(commandArgs);
+                    break;
+                case "kickmember": result = new KickMemberCommand().Execute(commandArgs);
+                    break;
+                case "disband": result = new DisbandCommand().Execute(commandArgs);
+                    break;
+                case "addteamto": result = new AddTeamToCommand().Execute(commandArgs);
+                    break;
+                case "showevent": result = new ShowEventCommand().Execute(commandArgs);
+                    break;
+                case "showteam": result = new ShowTeamCommand().Execute(commandArgs);
+                    break;
 
 
                 case "exit":

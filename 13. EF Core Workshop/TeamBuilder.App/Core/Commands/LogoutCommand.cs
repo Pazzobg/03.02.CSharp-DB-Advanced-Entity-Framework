@@ -9,7 +9,7 @@
         {
             Check.CheckLength(0, commandArgs);
 
-            string username = AuthenticationManager.GetCurrentUser().Username;
+            string username = AuthenticationManager.GetCurrentUser()?.Username;
 
             AuthenticationManager.Logout();
 

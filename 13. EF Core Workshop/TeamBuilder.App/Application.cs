@@ -9,7 +9,7 @@
     {
         public static void Main()
         {
-            //DbTools.ResetDb();
+            DbTools.ResetDb();
 
             Engine engine = new Engine(new CommandDispatcher());
             engine.Run();
